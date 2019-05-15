@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<title>D&D Battle Tracker</title>
+</head>
+<body>
+	<header>
+		<h1>Dungeons & Dragons Battle Tracker</h1>
+	</header>
+	<div class="battle-tracker">
+		<div class="initiative-order">
+			<ul id="initiative-list">
+			</ul>
+		</div>
+		<div class="characters">
+			<h2>Characters</h2>
+			<ul id="character-list">
+			</ul>
+			<button id="add-new-character">Add new</button>
+		</div>
+		<div class="monsters-npcs">
+			<h2>Monsters and NPCs</h2>
+			<ul id="monster-npc-list">
+			</ul>
+			<button id="add-new-npc">Add new</button>
+		</div>
+
+		<div class="start">
+			<button id="save-all-fields" disabled>Let's go! ⚔️</button>
+		</div>
+	</div>
+</body>
+
+<script src="src/js/battletracker.js"></script>
+</html>
