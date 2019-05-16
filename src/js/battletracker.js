@@ -3,6 +3,7 @@ const characterList = document.getElementById( 'character-list' );
 const addNewNPC = document.getElementById( 'add-new-npc' );
 const npcList = document.getElementById( 'monster-npc-list' );
 const saveAll = document.getElementById( 'save-all-fields' );
+const initList = document.getElementById( 'initiative-list' );
 let charCount = 0;
 
 /**
