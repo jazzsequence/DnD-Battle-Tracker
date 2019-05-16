@@ -492,4 +492,13 @@ addNewNPC.addEventListener( 'click', () => {
 	npcList.appendChild( buildTmpChar() );
 
 	addCharacter();
-} )
+
+	// When at least one NPC has been added, make the button clickable and listen for a click event on the Let's go! button.
+	saveAll.removeAttribute( 'disabled' );
+	saveAll.addEventListener( 'click', () => {
+		// Remove the Add New character buttons.
+		removeButtons();
+		// Build the character initiative list.
+		buildCharacterListByInit();
+	} );
+} );
