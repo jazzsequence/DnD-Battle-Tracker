@@ -383,6 +383,44 @@ function updateHp() {
 }
 
 /**
+ * Remove the Add New and Let's go buttons, but only if we actually have some characters.
+ */
+function removeButtons() {
+	const saveAllDesc = document.getElementById( 'save-all-fields-desc' );
+	let error = false;
+	let charListIsEmpty = characterList.innerHTML.trim() === '';
+	let npcListIsEmpty = npcList.innerHTML.trim() === '';
+
+	// Only remove buttons if both things are empty.
+	if ( ! charListIsEmpty && ! npcListIsEmpty ) {
+		addNewCharacter.remove();
+		addNewNPC.remove();
+		saveAll.remove();
+		saveAllDesc.remove();
+		error = document.getElementById( 'not-done-error-msg' );
+
+	} else {
+		displayNotEmptyMessage();
+	}
+
+	if ( error ) {
+		error.remove();
+	}
+}
+
+/**
+ * Display a message if we don't actually have all the characters and/or NPCs.
+ */
+function displayNotEmptyMessage() {
+	const container = document.getElementById( 'save-fields' );
+	const message = document.createElement( 'p' );
+	message.setAttribute( 'id', 'not-done-error-msg' );
+	message.classList.add( 'error' );
+	message.textContent = 'It doesn\'t look like you\'re quite done. There is some information missing. Please make sure you have all your characters and NPCs and try again.';
+	container.appendChild( message );
+}
+
+/**
  * Get the numeric id from an element.
  * This helps match the buttons with the parent list items and sibling inputs.
  *
