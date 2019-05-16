@@ -420,6 +420,10 @@ function displayNotEmptyMessage() {
 	container.appendChild( message );
 }
 
+function buildCharacterListByInit() {
+
+}
+
 /**
  * Get the numeric id from an element.
  * This helps match the buttons with the parent list items and sibling inputs.
