@@ -141,7 +141,7 @@ function buildName( thisItem, id, charName ) {
 function buildInitBonus( thisItem, id, dexVal ) {
 	const initBonus = getModifier( dexVal );
 
-	dexSpan = document.createElement('span');
+	dexSpan = document.createElement( 'span' );
 	dexSpan.setAttribute( 'id', `charDex-${id}` );
 	dexSpan.setAttribute( 'data-init_bonus', initBonus );
 	dexSpan.classList.add( 'character-init-bonus' );
@@ -390,7 +390,7 @@ function updateHp() {
  * @return {string|false} The numeric part of the id, if one exists.
  */
 function getId( el ) {
-	const id = el.getAttribute('id');
+	const id = el.getAttribute( 'id' );
 
 	if ( id !== typeof undefined ) {
 		return id.replace(/[^0-9]+/g,'');
