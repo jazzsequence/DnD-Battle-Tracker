@@ -528,6 +528,13 @@ function buildCharacterListByInit() {
 	}
 }
 
+function recordCharacterDamage( character ) {
+	console.log(character.id);
+	const damage = document.getElementById( `character-${character.id}-damage` ).value;
+
+	updateHp( character.id, damage );
+}
+
 /**
  * Get the numeric id from an element.
  * This helps match the buttons with the parent list items and sibling inputs.
