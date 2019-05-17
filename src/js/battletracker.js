@@ -460,6 +460,26 @@ function displayNotEmptyMessage() {
 	container.appendChild( message );
 }
 
+function getCharacterData() {
+	const characterList = document.getElementsByClassName( 'character-single' );
+	let characters = [];
+
+	for ( const character of characterList ) {
+		characters.push(
+			{
+				id: parseInt( character.dataset.id ),
+				name: character.dataset.characterName,
+				init: parseInt( character.dataset.initiative ),
+				maxHp: parseInt( character.dataset.hpMax ),
+				currentHp: parseInt( character.dataset.hpCurrent ),
+				type: character.dataset.characterType,
+			}
+		);
+	}
+
+	return characters;
+}
+
 function buildCharacterListByInit() {
 
 }
