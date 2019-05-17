@@ -533,9 +533,13 @@ function buildCharacterListByInit() {
 }
 
 function recordCharacterDamage( character ) {
-	console.log(character.id);
-	const damage = document.getElementById( `character-${character.id}-damage` ).value;
+	const damageInput = document.getElementById( `character-${character.id}-damage` );
+	const damage = parseInt( damageInput.value );
 
+	// Reset the input.
+	damageInput.value = '';
+
+	// Update the Hit Points.
 	updateHp( character.id, damage );
 }
 
