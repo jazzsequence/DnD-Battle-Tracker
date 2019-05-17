@@ -327,6 +327,9 @@ function updateHp() {
 
 		// Remove the button.
 		hpButton.remove();
+
+		// Disable the input.
+		hpInput.setAttribute( 'disabled', 'disabled' );
 	}
 
 	// If the current HP is greater than 0, update the current HP.
