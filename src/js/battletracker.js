@@ -333,29 +333,51 @@ function addHp() {
  */
 function updateHp( id, damage ) {
 	console.log(id, damage);
-	const thisItem = document.getElementById( `character-${id}` );
 	const hpInput = document.getElementById( `hp-${id}` );
-	const hpButton = document.getElementById( `hpButton-${id}` );
 	const charName = document.getElementById( `addChar-${id}` ).textContent;
 	const hpUpdateMsg = document.getElementById( `hpUpdateMsg-${id}` );
-	let hpMax = hpInput.dataset.hpMax;
-	let hpCurrent = hpInput.dataset.hpCurrent;
-	let hpLast = hpInput.dataset.hpLast;
+	const character = document.getElementById( `character-${id}` );
+	const hpMax = parseInt( hpInput.dataset.hpMax );
+	let hpCurrent = parseInt( hpInput.value );
+	let hpLast = hpCurrent;
 
-	// If the current HP is greater than 0, update the current HP.
-	if ( parseInt( hpCurrent ) > 0 ) {
-		// Get the last HP value from what's currently saved as "current".
-		hpLast = hpCurrent;
-		hpInput.setAttribute( 'data-hp-last', hpLast );
+	// If nothing happened (why are you clicking the update button?)...
+	if ( damage === 0 ) {
+		// Remove classes.
+		hpUpdateMsg.classList.remove( 'healed', 'damaged' );
+		hpUpdateMsg.textContent = '🤷‍♂️ Nothing happened.';
+	}
 
+	// Get the last HP value from what's currently saved as "current".
+	hpInput.setAttribute( 'data-hp-last', hpLast );
+	character.setAttribute( 'data-hp-last', hpLast );
+
+
+	// Subtract damage from the current HP.
+	hpCurrent = ( hpCurrent - damage ) ;
+	hpInput.value = hpCurrent;
+
+	// If the character was healed...
+	if ( damage < 0 ) {
 		// If the HP input is greater than the max HP, set the current HP to the max HP.
-		if ( parseInt( hpInput.value ) > hpMax ) {
+		if ( hpCurrent > hpMax ) {
 			hpCurrent = hpMax;
 			hpInput.value = hpMax;
-		} else {
-			hpCurrent = hpInput.value;
 		}
 
+		// Toggle CSS classes.
+		hpUpdateMsg.classList.remove( 'damaged' );
+
+		if ( ! hpUpdateMsg.classList.contains( 'healed' ) ) {
+			hpUpdateMsg.classList.add( 'healed' );
+		}
+
+		// Display message.
+		hpUpdateMsg.textContent = `❇️ ${ charName } was healed for ${ ( hpCurrent -hpLast ) } points!`;
+	}
+
+	// If the current HP is greater than 0, update the current HP.
+	if ( hpCurrent > 0 ) {
 		// If the HP input is less than zero, set the current HP to zero.
 		if ( parseInt( hpInput.value ) < 0 ) {
 			hpCurrent = 0;
@@ -364,10 +386,11 @@ function updateHp( id, damage ) {
 
 		// Update the current HP.
 		hpInput.setAttribute( 'data-hp-current', hpCurrent );
+		character.setAttribute( 'data-current-hp', hpCurrent );
 
 		// If you took damage...
-		if ( parseInt( hpCurrent ) < parseInt( hpLast ) ) {
-			hpUpdateMsg.textContent = `💥 ${ charName } took ${ parseInt( hpLast ) - parseInt( hpCurrent ) } damage!`;
+		if ( hpCurrent < hpLast ) {
+			hpUpdateMsg.textContent = `💥 ${ charName } took ${ ( hpLast - hpCurrent ) } damage!`;
 
 			/*
 			 * Toggle some CSS classes.
@@ -378,50 +401,34 @@ function updateHp( id, damage ) {
 				hpUpdateMsg.classList.add( 'damaged' );
 			}
 
-			// If you were healed...
-			if ( parseInt( hpCurrent ) > parseInt( hpLast ) ) {
-				hpUpdateMsg.textContent = `❇️ ${ charName } was healed for ${ parseInt( hpCurrent ) - parseInt( hpLast ) } points!`;
-
-				/*
-				 * Toggle CSS classes again.
-				 */
-				hpUpdateMsg.classList.remove( 'damaged' );
-
-				if ( ! hpUpdateMsg.classList.contains( 'healed' ) ) {
-					hpUpdateMsg.classList.add( 'healed' );
-				}
-			}
-
-			// If nothing happened (why are you clicking the update button?)...
-			if ( ( parseInt( hpCurrent ) === parseInt( hpLast ) ) && '0' !== hpMax ) {
-				// Remove classes.
-				hpUpdateMsg.classList.remove( 'healed', 'damaged' );
-				hpUpdateMsg.textContent = '🤷‍♂️ Nothing happened.';
-			}
 		}
-	} else {
-		// Are they actually dead?
-		if ( '0' === hpInput.value ) {
-			hpUpdateMsg.textContent = `${charName} died. 💀`;
 
-			/*
-			 * Do CSS things.
-			 */
-			hpUpdateMsg.classList.remove( 'healed', 'damaged' );
-
-			if ( ! hpUpdateMsg.classList.contains( 'died' ) ) {
-				hpUpdateMsg.classList.add( 'died' );
-			}
-
-			// Remove the button for the character who died.
-			document.getElementById( `hpButton-${id}` ).remove();
-		} else {
-			// If they were revived, display a message and update their HP.
+		// If they were revived, display a message and update their HP.
+		if ( hpLast <= 0 ) {
 			hpCurrent = hpInput.value;
 			hpInput.setAttribute( 'data-hp-current', hpCurrent );
+			character.setAttribute( 'data-current-hp', hpCurrent );
 			hpUpdateMsg.classList.remove( 'damaged' );
 			hpUpdateMsg.classList.add( 'healed' );
 			hpUpdateMsg.textContent = `✨ ${ charName } was revived!`
+		}
+	} else {
+		// Can't have less than zero health.
+		hpCurrent = 0;
+		hpInput.value = hpCurrent;
+
+		hpInput.setAttribute( 'data-hp-current', hpCurrent );
+		character.setAttribute( 'data-current-hp', hpCurrent )
+
+		hpUpdateMsg.textContent = `${charName} died. 💀`;
+
+		/*
+		 * Do CSS things.
+		 */
+		hpUpdateMsg.classList.remove( 'healed', 'damaged' );
+
+		if ( ! hpUpdateMsg.classList.contains( 'died' ) ) {
+			hpUpdateMsg.classList.add( 'died' );
 		}
 	}
 }
