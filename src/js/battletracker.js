@@ -513,6 +513,7 @@ function buildCharacterListByInit() {
 
 		// Add an input for recording damage.
 		characterDamage.setAttribute( 'id', `character-${character.id}-damage` );
+		characterDamage.setAttribute( 'type', 'number' );
 
 		// Add a button to save input.
 		characterDamageBtn.setAttribute( 'id', `character-${character.id}-damage-btn` );
