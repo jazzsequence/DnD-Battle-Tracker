@@ -289,14 +289,50 @@ function buildHp( thisItem, id ) {
 	hpUpdateMsg.textContent = ''; // Reset the content of the span.
 	thisItem.appendChild( hpUpdateMsg );
 
-	hpButton.addEventListener( 'click', updateHp );
+	hpButton.addEventListener( 'click', addHp );
+}
+
+/**
+ * Save the character HP.
+ */
+function addHp() {
+	const id = getId( this );
+	const thisItem = document.getElementById( `character-${id}` );
+	const hpInput = document.getElementById( `hp-${id}` );
+	const hpButton = document.getElementById( `hpButton-${id}` );
+	const charName = document.getElementById( `addChar-${id}` ).textContent;
+	const hpUpdateMsg = document.getElementById( `hpUpdateMsg-${id}` );
+	let hpMax = hpInput.value;
+	let hpCurrent = hpMax;
+	let hpLast = hpMax;
+
+	// Set the max HP to the value that was input first.
+	hpInput.setAttribute( 'data-hp-max', hpMax );
+
+	// Set the current HP to the max value because we're initializing the fight.
+	hpInput.setAttribute( 'data-hp-current', hpCurrent );
+
+	// Set the last HP to a the max value because we haven't done anything yet.
+	hpInput.setAttribute( 'data-hp-last', hpLast );
+
+	// Store all the data for the character in the list item for the character.
+	saveCharacterData( thisItem, id );
+
+	// Remove the button.
+	hpButton.remove();
+
+	// Disable the input.
+	hpInput.setAttribute( 'disabled', 'disabled' );
+
+	// Add a message after we've saved all the data.
+	hpUpdateMsg.textContent = `${charName} added.`;
 }
 
 /**
  * Handle HP changes.
  */
-function updateHp() {
-	const id = getId( this );
+function updateHp( id, damage ) {
+	console.log(id, damage);
 	const thisItem = document.getElementById( `character-${id}` );
 	const hpInput = document.getElementById( `hp-${id}` );
 	const hpButton = document.getElementById( `hpButton-${id}` );
@@ -306,73 +342,40 @@ function updateHp() {
 	let hpCurrent = hpInput.dataset.hpCurrent;
 	let hpLast = hpInput.dataset.hpLast;
 
-	// If the HP max was 0, it hasn't been set yet. We should be able to get the value from the input, but first make sure it's not empty.
-	if ( '0' === hpMax && hpInput.value !== '' && hpInput.value !== 'undefined' ) {
-		// Get the max HP from the HP input field.
-		hpMax = hpInput.value;
-
-		// Set the max HP to the value that was input first.
-		hpInput.setAttribute( 'data-hp-max', hpMax );
-
-		// Set the current HP to the max value because we're initializing the fight.
-		hpCurrent = hpMax;
-		hpInput.setAttribute( 'data-hp-current', hpCurrent );
-
-		// Set the last HP to a random string because we haven't done anything yet.
-		hpLast = 'init';
-		hpInput.setAttribute( 'data-hp-last', hpLast );
-
-		// Store all the data for the character in the list item for the character.
-		saveCharacterData( thisItem, id );
-
-		// Remove the button.
-		hpButton.remove();
-
-		// Disable the input.
-		hpInput.setAttribute( 'disabled', 'disabled' );
-	}
-
 	// If the current HP is greater than 0, update the current HP.
 	if ( parseInt( hpCurrent ) > 0 ) {
-		// If the last HP was 'init', we just added the character's HP.
-		if ( 'init' === hpLast ) {
-			hpUpdateMsg.textContent = `${charName} added.`;
-			hpLast = hpCurrent;
-			hpInput.setAttribute( 'data-hp-last', hpLast );
+		// Get the last HP value from what's currently saved as "current".
+		hpLast = hpCurrent;
+		hpInput.setAttribute( 'data-hp-last', hpLast );
+
+		// If the HP input is greater than the max HP, set the current HP to the max HP.
+		if ( parseInt( hpInput.value ) > hpMax ) {
+			hpCurrent = hpMax;
+			hpInput.value = hpMax;
 		} else {
-			// Get the last HP value from what's currently saved as "current".
-			hpLast = hpCurrent;
-			hpInput.setAttribute( 'data-hp-last', hpLast );
+			hpCurrent = hpInput.value;
+		}
 
-			// If the HP input is greater than the max HP, set the current HP to the max HP.
-			if ( parseInt( hpInput.value ) > hpMax ) {
-				hpCurrent = hpMax;
-				hpInput.value = hpMax;
-			} else {
-				hpCurrent = hpInput.value;
-			}
+		// If the HP input is less than zero, set the current HP to zero.
+		if ( parseInt( hpInput.value ) < 0 ) {
+			hpCurrent = 0;
+			hpInput.value = hpCurrent;
+		}
 
-			// If the HP input is less than zero, set the current HP to zero.
-			if ( parseInt( hpInput.value ) < 0 ) {
-				hpCurrent = 0;
-				hpInput.value = hpCurrent;
-			}
+		// Update the current HP.
+		hpInput.setAttribute( 'data-hp-current', hpCurrent );
 
-			// Update the current HP.
-			hpInput.setAttribute( 'data-hp-current', hpCurrent );
+		// If you took damage...
+		if ( parseInt( hpCurrent ) < parseInt( hpLast ) ) {
+			hpUpdateMsg.textContent = `💥 ${ charName } took ${ parseInt( hpLast ) - parseInt( hpCurrent ) } damage!`;
 
-			// If you took damage...
-			if ( parseInt( hpCurrent ) < parseInt( hpLast ) ) {
-				hpUpdateMsg.textContent = `💥 ${ charName } took ${ parseInt( hpLast ) - parseInt( hpCurrent ) } damage!`;
+			/*
+			 * Toggle some CSS classes.
+			 */
+			hpUpdateMsg.classList.remove( 'healed' );
 
-				/*
-				 * Toggle some CSS classes.
-				 */
-				hpUpdateMsg.classList.remove( 'healed' );
-
-				if ( ! hpUpdateMsg.classList.contains( 'damaged' ) ) {
-					hpUpdateMsg.classList.add( 'damaged' );
-				}
+			if ( ! hpUpdateMsg.classList.contains( 'damaged' ) ) {
+				hpUpdateMsg.classList.add( 'damaged' );
 			}
 
 			// If you were healed...
