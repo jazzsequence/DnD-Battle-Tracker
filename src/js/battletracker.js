@@ -178,6 +178,7 @@ function buildInitBonus( thisItem, id, dexVal ) {
 	dexSpan = document.createElement( 'span' );
 	dexSpan.setAttribute( 'id', `charDex-${id}` );
 	dexSpan.setAttribute( 'data-init-bonus', initBonus );
+	dexSpan.setAttribute( 'data-dex', dexVal );
 	dexSpan.classList.add( 'character-init-bonus' );
 	dexSpan.textContent = `Initiative Bonus: ${initBonus}`;
 	thisItem.appendChild( dexSpan );
