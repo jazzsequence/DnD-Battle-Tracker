@@ -522,7 +522,7 @@ function buildCharacterListByInit() {
 		// Add the character to the list.
 		initList.appendChild( characterEl );
 
-		characterEl.addEventListener( 'click', () => {
+		characterDamageBtn.addEventListener( 'click', () => {
 			recordCharacterDamage( character );
 		} );
 	}
