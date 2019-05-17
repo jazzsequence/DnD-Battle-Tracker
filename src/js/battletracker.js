@@ -481,7 +481,42 @@ function getCharacterData() {
 }
 
 function buildCharacterListByInit() {
+	const characters = getCharacterData();
 
+	// Sort characters by init score, then by dex.
+	characters.sort( ( a, b ) => ( a.init < b.init ) ? 1 : ( a.init === b.init ) ? ( ( a.dex < b.dex ) ? 1 : -1 ) : -1 );
+
+	for ( const character of characters ) {
+		const characterEl = document.createElement( 'li' );
+		const characterDamage = document.createElement( 'input' );
+		const characterDamageBtn = document.createElement( 'button' );
+
+		// Build the list item for the character.
+		characterEl.textContent = `${character.name} (${character.init}) [${ character.type.toUpperCase()}]`;
+		characterEl.setAttribute( 'id', `character-${character.id}` );
+		characterEl.setAttribute( 'data-name', character.name );
+		characterEl.setAttribute( 'data-init', character.init );
+		characterEl.setAttribute( 'data-max-hp', character.maxHp );
+		characterEl.setAttribute( 'data-current-hp', character.currentHp );
+
+		// Add an input for recording damage.
+		characterDamage.setAttribute( 'id', `character-${character.id}-damage` );
+
+		// Add a button to save input.
+		characterDamageBtn.setAttribute( 'id', `character-${character.id}-damage-btn` );
+		characterDamageBtn.textContent = 'Record Damage';
+
+		// Add the input and button to the list item.
+		characterEl.appendChild( characterDamage );
+		characterEl.appendChild( characterDamageBtn );
+
+		// Add the character to the list.
+		initList.appendChild( characterEl );
+
+		characterEl.addEventListener( 'click', () => {
+			recordCharacterDamage( character );
+		} );
+	}
 }
 
 /**
