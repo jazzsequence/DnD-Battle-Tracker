@@ -420,7 +420,7 @@ function updateHp() {
  * Remove the Add New and Let's go buttons, but only if we actually have some characters.
  */
 function removeButtons() {
-	const saveAllDesc = document.getElementById( 'save-all-fields-desc' );
+	const saveWrapper = document.getElementById( 'save-fields' );
 	let error = false;
 	let charListIsEmpty = characterList.innerHTML.trim() === '';
 	let npcListIsEmpty = npcList.innerHTML.trim() === '';
@@ -429,8 +429,7 @@ function removeButtons() {
 	if ( ! charListIsEmpty && ! npcListIsEmpty ) {
 		addNewCharacter.remove();
 		addNewNPC.remove();
-		saveAll.remove();
-		saveAllDesc.remove();
+		saveWrapper.remove();
 		error = document.getElementById( 'not-done-error-msg' );
 
 	} else {
