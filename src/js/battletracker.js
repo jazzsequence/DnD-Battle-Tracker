@@ -322,8 +322,11 @@ function updateHp() {
 		hpLast = 'init';
 		hpInput.setAttribute( 'data-hp-last', hpLast );
 
-		// Update the button text.
-		hpButton.textContent = 'Update Hit Points';
+		// Store all the data for the character in the list item for the character.
+		saveCharacterData( thisItem, id );
+
+		// Remove the button.
+		hpButton.remove();
 	}
 
 	// If the current HP is greater than 0, update the current HP.
