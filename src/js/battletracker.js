@@ -460,6 +460,11 @@ function displayNotEmptyMessage() {
 	container.appendChild( message );
 }
 
+/**
+ * Scrapes all the characters on the page and returns their data in an array of objects.
+ *
+ * @return {array} An array of objects of character data.
+ */
 function getCharacterData() {
 	const characterList = document.getElementsByClassName( 'character-single' );
 	let characters = [];
@@ -480,6 +485,10 @@ function getCharacterData() {
 	return characters;
 }
 
+/**
+ * Build the initiative list. Order by initiative first, then by Dex score.
+ * Adds an input for recording damage and a button to save the damage input.
+ */
 function buildCharacterListByInit() {
 	const characters = getCharacterData();
 
