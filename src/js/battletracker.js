@@ -177,7 +177,7 @@ function buildInitBonus( thisItem, id, dexVal ) {
 
 	dexSpan = document.createElement( 'span' );
 	dexSpan.setAttribute( 'id', `charDex-${id}` );
-	dexSpan.setAttribute( 'data-init_bonus', initBonus );
+	dexSpan.setAttribute( 'data-init-bonus', initBonus );
 	dexSpan.classList.add( 'character-init-bonus' );
 	dexSpan.textContent = `Initiative Bonus: ${initBonus}`;
 	thisItem.appendChild( dexSpan );
@@ -221,7 +221,7 @@ function calculateAndSaveInitiative() {
 	const thisItem = document.getElementById( `character-${id}` );
 	const initInput = document.getElementById( `charInit-${id}` );
 	const initRoll = initInput.value;
-	const initBonus = document.getElementById( `charDex-${id}` ).dataset.init_bonus;
+	const initBonus = document.getElementById( `charDex-${id}` ).dataset.initBonus;
 	let initiative = 0;
 
 	if ( 'undefined' !== initRoll & '' !== initRoll ) {
