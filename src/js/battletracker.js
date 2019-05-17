@@ -118,6 +118,39 @@ function addCharacter() {
 }
 
 /**
+ * Store the character data in the list item for the character.
+ *
+ * @param  {element} thisItem This is the <li> element for the character.
+ * @param  {int}     id       The unique character ID.
+ */
+function saveCharacterData( thisItem, id ) {
+	const charName = document.getElementById( `addChar-${id}` ).textContent;
+	const charInit = document.getElementById( `initiative-${id}` ).dataset.initiative;
+	const charDex = document.getElementById( `charDex-${id}` ).dataset.dex;
+	const charMaxHp = document.getElementById( `hp-${id}` ).dataset.hpMax;
+	const charCurrentHp = document.getElementById( `hp-${id}` ).dataset.hpCurrent;
+	const childOf = thisItem.parentNode.id;
+
+	thisItem.classList.add( 'character-single' );
+	thisItem.setAttribute( 'data-id', id );
+	thisItem.setAttribute( 'data-character-name', charName );
+	thisItem.setAttribute( 'data-initiative', charInit );
+	thisItem.setAttribute( 'data-dex', charDex );
+	thisItem.setAttribute( 'data-hp-max', charMaxHp );
+	thisItem.setAttribute( 'data-hp-current', charCurrentHp );
+
+	// If the character is a PC, set the character type to PC.
+	if ( 'character-list' === childOf ) {
+		thisItem.setAttribute( 'data-character-type', 'pc' );
+	}
+
+	// If the character is an NPC, set the type to NPC.
+	if ( 'monster-npc-list' === childOf ) {
+		thisItem.setAttribute( 'data-character-type', 'npc' );
+	}
+}
+
+/**
  * Save the name to the page as a text element.
  *
  * @param  {element} thisItem This is the <li> element to add the name to.
