@@ -385,7 +385,6 @@ function updateHp( id, damage ) {
 		}
 
 		// Update the current HP.
-		hpInput.setAttribute( 'data-hp-current', hpCurrent );
 		character.setAttribute( 'data-current-hp', hpCurrent );
 
 		// If you took damage...
@@ -406,7 +405,6 @@ function updateHp( id, damage ) {
 		// If they were revived, display a message and update their HP.
 		if ( hpLast <= 0 ) {
 			hpCurrent = hpInput.value;
-			hpInput.setAttribute( 'data-hp-current', hpCurrent );
 			character.setAttribute( 'data-current-hp', hpCurrent );
 			hpUpdateMsg.classList.remove( 'damaged' );
 			hpUpdateMsg.classList.add( 'healed' );
@@ -417,7 +415,6 @@ function updateHp( id, damage ) {
 		hpCurrent = 0;
 		hpInput.value = hpCurrent;
 
-		hpInput.setAttribute( 'data-hp-current', hpCurrent );
 		character.setAttribute( 'data-current-hp', hpCurrent )
 
 		hpUpdateMsg.textContent = `${charName} died. 💀`;
