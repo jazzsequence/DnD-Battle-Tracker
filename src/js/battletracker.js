@@ -332,7 +332,6 @@ function addHp() {
  * Handle HP changes.
  */
 function updateHp( id, damage ) {
-	console.log(id, damage);
 	const hpInput = document.getElementById( `hp-${id}` );
 	const charName = document.getElementById( `addChar-${id}` ).textContent;
 	const hpUpdateMsg = document.getElementById( `hpUpdateMsg-${id}` );
