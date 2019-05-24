@@ -634,7 +634,7 @@ function calculateModifier( score ) {
  * @return {string}       The modifier.
  */
 function getModifier( dexScore ) {
-	const modValue = calculateModifier( parseInt(dexScore) );
+	const modValue = calculateModifier( parseInt( dexScore ) );
 
 	if ( modValue > 0 ) {
 		return `+${modValue}`;
