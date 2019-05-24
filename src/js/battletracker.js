@@ -21,7 +21,7 @@ function buildTmpChar() {
 	nameInput.setAttribute( 'id',`addChar-${charCount}` );
 	nameInput.setAttribute( 'placeholder', 'Character name' );
 	nameInput.classList.add( 'character-name');
-	tmpChar.appendChild(nameInput);
+	tmpChar.appendChild( nameInput );
 
 	// Character Dexterity.
 	dexInput.setAttribute( 'id', `charDex-${charCount}` );
@@ -30,7 +30,7 @@ function buildTmpChar() {
 	dexInput.setAttribute( 'min', '1' );
 	dexInput.setAttribute( 'max', '30' );
 	dexInput.classList.add( 'character-dex' );
-	tmpChar.appendChild(dexInput);
+	tmpChar.appendChild( dexInput );
 
 	// Add button.
 	button.setAttribute( 'id',`add-tmp-char-${charCount}` );
