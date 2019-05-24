@@ -557,7 +557,7 @@ function getId( el ) {
 	const id = el.getAttribute( 'id' );
 
 	if ( id !== typeof undefined ) {
-		return id.replace(/[^0-9]+/g,'');
+		return id.replace( /[^0-9]+/g, '' );
 	}
 
 	return false;
