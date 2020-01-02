@@ -1,0 +1,40 @@
+{
+  "name": "battle-tracker",
+  "version": "0.2.0",
+  "description": "A simple battle tracking system for Dungeons & Dragons written in JavaScript to track initiative and damage.",
+  "main": "battletracker.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "run-script-os",
+    "dev": "gulp watch",
+    "build": "gulp build",
+    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazzsequence/DnD-Battle-Tracker.git"
+  },
+  "keywords": [
+    "dnd",
+    "dungeons",
+    "and",
+    "dragons",
+    "initiative",
+    "javascript"
+  ],
+  "author": "Chris Reynolds <me@chrisreynolds.io>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jazzsequence/DnD-Battle-Tracker/issues"
+  },
+  "homepage": "https://github.com/jazzsequence/DnD-Battle-Tracker#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0",
+    "run-script-os": "^1.0.7"
+  }
+}
