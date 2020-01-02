@@ -66,10 +66,6 @@
 
 	.characters {
 		grid-area: characters;
-
-		ul > li .character-dex {
-			width: auto;
-		}
 	}
 
 	.monsters-npcs {
@@ -93,5 +89,10 @@
 			grid-column-start: -1;
 			align-self: center;
 		}
+	}
+
+	.hp-update-msg {
+		color: $green;
+		font-style: italic;
 	}
 }
