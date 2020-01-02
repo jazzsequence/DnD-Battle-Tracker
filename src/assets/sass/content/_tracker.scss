@@ -47,6 +47,19 @@
 				display: grid;
 				grid-template-columns: 125px 1fr auto auto auto;
 				grid-gap: 10px;
+				align-items: start;
+
+				.hp-input {
+					width: 4rem;
+				}
+
+				.character-initiative {
+					width: 3rem;
+				}
+
+				.character-dex {
+					width: auto;
+				}
 			}
 		}
 	}
