@@ -45,7 +45,7 @@
 
 			li {
 				display: grid;
-				grid-template-columns: 1fr 1fr auto;
+				grid-template-columns: 125px 1fr auto auto auto;
 				grid-gap: 10px;
 			}
 		}
