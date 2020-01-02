@@ -1,0 +1,14 @@
+button {
+	background: $yellow;
+	font-size: 1rem;
+	border: 0;
+	padding: 3px 10px;
+	font-family: $heading;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px rgba( 0, 0, 0, 0.5 );
+
+	&:hover:not(:disabled) {
+		background: $green;
+		cursor: pointer;
+	}
+}

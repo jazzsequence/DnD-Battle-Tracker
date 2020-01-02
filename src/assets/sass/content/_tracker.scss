@@ -1,0 +1,71 @@
+.battle-tracker{
+	margin: 0 auto;
+	max-width: 80%;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-areas:
+	"initiative initiative"
+	"characters monsters"
+	"save save";
+	grid-template-columns: 1fr 1fr;
+
+	.initiative-order {
+		grid-area: initiative;
+	}
+
+	.characters,
+	.monsters-npcs {
+		display: grid;
+		align-self: start;
+
+		button {
+			justify-self: end;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			display: grid;
+			grid-gap: 10px;
+			grid-template-columns: 1fr;
+			grid-auto-flow: row;
+
+			li {
+				display: grid;
+				grid-template-columns: 1fr 1fr auto;
+				grid-gap: 10px;
+			}
+		}
+	}
+
+	.characters {
+		grid-area: characters;
+
+		ul > li .character-dex {
+			width: auto;
+		}
+	}
+
+	.monsters-npcs {
+		grid-area: monsters;
+	}
+
+	#save-fields {
+		grid-area: save;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-areas: "description button";
+
+		p {
+			grid-area: description;
+			margin: 0;
+			grid-column-start: 1;
+		}
+
+		button {
+			grid-area: button;
+			grid-column-start: -1;
+			align-self: center;
+		}
+	}
+}

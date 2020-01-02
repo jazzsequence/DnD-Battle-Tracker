@@ -1,0 +1,17 @@
+/**
+ * Headings
+ *
+ * Returns the appropriate font family and styles for headings.
+ *
+ * @param string $level The heading level. Currently supports h1, h2
+ */
+@mixin heading( $level ) {
+	@if $level == h1 {
+		font-family: $title;
+		font-weight: 300;
+	}
+
+	@if $level == h2 {
+		font-family: $heading;
+	}
+}
