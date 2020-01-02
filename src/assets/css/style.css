@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative|Palanquin:100|Uncial+Antiqua&display=swap");
+/**
+ * Colors
+ *
+ * Acronymn 8 Palette
+ * https://lospec.com/palette-list/acronym-8
+ */
+/**
+ * Fonts
+ */
+/**
+ * Headings
+ *
+ * Returns the appropriate font family and styles for headings.
+ *
+ * @param string $level The heading level. Currently supports h1, h2
+ */
+body {
+  background: #2d2c3b;
+  color: #f3f2e8;
+  font-family: "Palanquin", "Open Sans", sans-serif; }
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; }
+
+h1 {
+  font-family: "Uncial Antiqua", Georgia, cursive;
+  font-weight: 300; }
+
+h2 {
+  font-family: "Cinzel Decorative", Georgia, cursive; }
+
+input {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0;
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #f3f2e8; }
+
+button {
+  background: #dcc484;
+  font-size: 1rem;
+  border: 0;
+  padding: 3px 10px;
+  font-family: "Cinzel Decorative", Georgia, cursive;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
+  button:hover:not(:disabled) {
+    background: #40a07c;
+    cursor: pointer; }
+
+.battle-tracker {
+  margin: 0 auto;
+  max-width: 80%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "initiative initiative" "characters monsters" "save save";
+  grid-template-columns: 1fr 1fr; }
+  .battle-tracker .initiative-order {
+    grid-area: initiative; }
+  .battle-tracker .characters,
+  .battle-tracker .monsters-npcs {
+    display: grid;
+    align-self: start; }
+    .battle-tracker .characters button,
+    .battle-tracker .monsters-npcs button {
+      justify-self: end; }
+    .battle-tracker .characters ul,
+    .battle-tracker .monsters-npcs ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr;
+      grid-auto-flow: row; }
+      .battle-tracker .characters ul li,
+      .battle-tracker .monsters-npcs ul li {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        grid-gap: 10px; }
+  .battle-tracker .characters {
+    grid-area: characters; }
+    .battle-tracker .characters ul > li .character-dex {
+      width: auto; }
+  .battle-tracker .monsters-npcs {
+    grid-area: monsters; }
+  .battle-tracker #save-fields {
+    grid-area: save;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "description button"; }
+    .battle-tracker #save-fields p {
+      grid-area: description;
+      margin: 0;
+      grid-column-start: 1; }
+    .battle-tracker #save-fields button {
+      grid-area: button;
+      grid-column-start: -1;
+      align-self: center; }
