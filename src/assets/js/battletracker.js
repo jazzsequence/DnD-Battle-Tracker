@@ -343,7 +343,7 @@ function updateHp( id, damage ) {
 	// If nothing happened (why are you clicking the update button?)...
 	if ( damage === 0 ) {
 		// Remove classes.
-		hpUpdateMsg.classList.remove( 'healed', 'damaged' );
+		hpUpdateMsg.classList.add( 'nothing' );
 		hpUpdateMsg.textContent = '🤷‍♂️ Nothing happened.';
 	}
 
