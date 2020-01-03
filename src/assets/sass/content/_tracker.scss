@@ -124,5 +124,25 @@
 	.hp-update-msg {
 		color: $green;
 		font-style: italic;
+
+		&.nothing {
+			color: $yellow;
+			font-style: normal;
+		}
+
+		&.damaged {
+			color: $red;
+			font-style: italic;
+		}
+
+		&.died {
+			color: $brown;
+			font-style: italic;
+		}
+
+		&.healed {
+			color: $green;
+			font-style: italic;
+		}
 	}
 }
