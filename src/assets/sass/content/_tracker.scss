@@ -31,12 +31,26 @@
 			}
 
 			li {
+				padding: 5px;
+				background: rgba( 0,0,0,0.1 );
 				display: grid;
-				grid-template-columns: 1fr 3rem auto;
-				grid-gap: 10px;
-				justify-content: space-evenly;
-			}
+				grid-template-columns: 10rem 4rem auto;
+				grid-gap: 20px;
+				justify-content: start;
 
+				input {
+					width: 3rem;
+				}
+
+				&:nth-child(even) {
+					background: rgba(255,255,255,0.1);
+				}
+
+				button {
+					justify-self: center;
+				}
+
+			}
 		}
 	}
 
