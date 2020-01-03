@@ -5,7 +5,7 @@
 
 A simple battle tracking system for Dungeons &amp; Dragons written in JavaScript to track initiative and damage.
 
-![Animated Demo](https://media.giphy.com/media/chb2RfSawhoj7KYyvb/giphy.gif)
+![Animated Demo](https://media.giphy.com/media/TfWyPBecjNdlNj00uF/giphy.gif)
 
 ## Description
 
