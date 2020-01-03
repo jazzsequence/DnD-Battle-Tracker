@@ -49,6 +49,10 @@
 				grid-gap: 10px;
 				align-items: start;
 
+				&.character-single {
+					grid-template-columns: 4rem auto auto 5rem 7rem;
+				}
+
 				.hp-input {
 					width: 4rem;
 				}

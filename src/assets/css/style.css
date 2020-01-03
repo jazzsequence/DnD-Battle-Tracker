@@ -93,6 +93,9 @@ button {
         grid-template-columns: 125px 1fr auto auto auto;
         grid-gap: 10px;
         align-items: start; }
+        .battle-tracker .characters ul li.character-single,
+        .battle-tracker .monsters-npcs ul li.character-single {
+          grid-template-columns: 4rem auto auto 5rem 7rem; }
         .battle-tracker .characters ul li .hp-input,
         .battle-tracker .monsters-npcs ul li .hp-input {
           width: 4rem; }
