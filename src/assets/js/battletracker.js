@@ -416,6 +416,8 @@ function updateHp( id, damage ) {
 		if ( hpLast <= 0 ) {
 			hpCurrent = hpInput.value;
 			character.setAttribute( 'data-hp-current', hpCurrent );
+			character.classList.add( 'revived' );
+			character.classList.remove( 'dead' );
 			hpUpdateMsg.classList.remove( 'damaged' );
 			hpUpdateMsg.classList.add( 'healed' );
 			hpUpdateMsg.textContent = `✨ ${ charName } was revived!`
@@ -426,6 +428,7 @@ function updateHp( id, damage ) {
 		hpInput.value = hpCurrent;
 
 		character.setAttribute( 'data-hp-current', hpCurrent );
+		character.classList.add( 'dead' );
 
 		hpUpdateMsg.textContent = `${charName} died. 💀`;
 
