@@ -340,6 +340,16 @@ function updateHp( id, damage ) {
 	let hpCurrent = parseInt( hpInput.value );
 	let hpLast = hpCurrent;
 
+	// Reset character initiative list classes if any were set.
+	if ( character.classList.contains( 'healed', 'revived', 'nothing' ) ) {
+		character.classList.remove( 'healed', 'revived', 'nothing' );
+	}
+
+	// Reset character update message classes if any were set.
+	if ( hpUpdateMsg.classList.contains( 'healed', 'died', 'nothing', 'damaged' ) ) {
+		hpUpdateMsg.classList.remove( 'healed', 'died', 'nothing', 'damaged' );
+	}
+
 	// If nothing happened (why are you clicking the update button?)...
 	if ( damage === 0 ) {
 		// Remove classes.
