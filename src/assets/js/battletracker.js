@@ -366,6 +366,7 @@ function updateHp( id, damage ) {
 
 		// Toggle CSS classes.
 		hpUpdateMsg.classList.remove( 'damaged' );
+		character.classList.add( 'healed' );
 
 		if ( ! hpUpdateMsg.classList.contains( 'healed' ) ) {
 			hpUpdateMsg.classList.add( 'healed' );
