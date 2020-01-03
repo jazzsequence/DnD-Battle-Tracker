@@ -1,4 +1,5 @@
-# D&D Battle Tracker ⚔️
+![Dungeons and Dragons logo](https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Dungeons_%26_Dragons_5th_Edition_logo.svg/320px-Dungeons_%26_Dragons_5th_Edition_logo.svg.png)
+# Battle Tracker ⚔️
 [![version badge](https://img.shields.io/github/package-json/v/jazzsequence/DnD-Battle-Tracker)](https://github.com/jazzsequence/DnD-Battle-Tracker/releases/)
 
 A simple battle tracking system for Dungeons &amp; Dragons written in JavaScript to track initiative and damage.
