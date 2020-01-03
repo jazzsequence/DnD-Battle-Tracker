@@ -373,7 +373,7 @@ function updateHp( id, damage ) {
 		}
 
 		// Display message.
-		hpUpdateMsg.textContent = `❇️ ${ charName } was healed for ${ ( hpCurrent -hpLast ) } points!`;
+		hpUpdateMsg.textContent = `❇️ ${ charName } was healed for ${ ( hpCurrent - hpLast ) } points!`;
 	}
 
 	// If the current HP is greater than 0, update the current HP.
