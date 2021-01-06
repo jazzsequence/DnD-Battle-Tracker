@@ -34,7 +34,7 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^5.0.0",
     "run-script-os": "^1.1.4"
   }
 }
