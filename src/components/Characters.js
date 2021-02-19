@@ -1,6 +1,6 @@
 import React from 'react';
 import CharacterList from './CharacterList';
-import AddNewButton from './AddNewButton';
+import AddCharacterForm from './AddCharacterForm';
 
 class Characters extends React.Component {
 	addCharacter = ( character ) => {
