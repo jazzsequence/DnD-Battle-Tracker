@@ -6,6 +6,23 @@ import NPCs from './NPCs';
 import Save from './Save';
 
 class App extends React.Component {
+	state = {
+		characterCount: 0, // The total number of characters on the page.
+		npcCount: 0, // The total number of NPCs on the page.
+		// characters: {}, // A list of all the characters
+	}
+
+	updateCharacterCount = () => {
+		const count = this.state.characterCount + 1;
+		this.setState( { characterCount: count } );
+	}
+
+	updateNpcCount = () => {
+		const count = this.state.npcCount + 1;
+
+		this.setState( { npcCount: count } );
+	}
+
 	render() {
 		return (
 			<>
