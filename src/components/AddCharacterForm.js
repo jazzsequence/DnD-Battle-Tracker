@@ -24,11 +24,17 @@ class AddCharacterForm extends React.Component {
 			init: modifiedInit,
 		}
 
-		// Pass the character object upstream.
-		this.props.addCharacter( character );
+		// Check if this is a character. If not it's an NPC.
+		if ( this.props.type === 'character' ) {
+			// Pass the character object upstream.
+			this.props.updateCharacters( character.index, character );
 
-		// Update the character index.
-		this.props.updateCharacterCount();
+			// Update the character index.
+			this.props.updateCharacterCount();
+		} else {
+			this.props.updateNPCs( character.index, character );
+			this.props.updateNpcCount();
+		}
 
 		// Reset the form.
 		event.currentTarget.reset();
