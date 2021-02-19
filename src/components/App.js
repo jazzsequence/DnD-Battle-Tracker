@@ -12,15 +12,6 @@ class App extends React.Component {
 		// characters: {}, // A list of all the characters
 	}
 
-	/**
-	 * Get the current character index.
-	 */
-	characterIndex = () => {
-		const index = ( ! this.state.characterCount ) ? 1 : this.state.characterCount + 1;
-		this.setState( { characterCount: index } );
-		return index;
-	}
-
 	updateCharacterCount = () => {
 		const count = this.state.characterCount + 1;
 		this.setState( { characterCount: count } );
