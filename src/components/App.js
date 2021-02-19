@@ -12,6 +12,15 @@ class App extends React.Component {
 		// characters: {}, // A list of all the characters
 	}
 
+	/**
+	 * Get the current character index.
+	 */
+	characterIndex = () => {
+		const index = ( ! this.state.characterCount ) ? 1 : this.state.characterCount + 1;
+		this.setState( { characterCount: index } );
+		return index;
+	}
+
 	updateCharacterCount = () => {
 		const count = this.state.characterCount + 1;
 		this.setState( { characterCount: count } );
@@ -29,8 +38,15 @@ class App extends React.Component {
 			<Header />
 			<div className="battle-tracker">
 				<Initiative />
-				<Characters />
-				<NPCs />
+				<Characters
+					characterIndex={ this.state.characterCount }
+					updateCharacterCount={ this.updateCharacterCount }
+					// characters={ this.state.characters }
+				/>
+				<NPCs
+					characterIndex={ this.state.npcCount }
+					updateCharacterCount={ this.updateNpcCount }
+				/>
 				<Save />
 			</div>
 			</>
