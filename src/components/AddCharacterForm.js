@@ -7,6 +7,11 @@ class AddCharacterForm extends React.Component {
 	hpRef = React.createRef();
 	initRef = React.createRef();
 
+	/**
+	 * Handle creating the character and storing the data in the current state.
+	 *
+	 * @param {event} event
+	 */
 	createCharacter = event => {
 		event.preventDefault();
 
@@ -29,6 +34,9 @@ class AddCharacterForm extends React.Component {
 		event.currentTarget.reset();
 	}
 
+	/**
+	 * Render the new character form.
+	 */
 	render() {
 		const index = this.props.characterIndex;
 		return (
