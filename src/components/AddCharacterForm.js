@@ -6,6 +6,22 @@ class AddCharacterForm extends React.Component {
 	dexRef = React.createRef();
 	hpRef = React.createRef();
 	initRef = React.createRef();
+
+	createCharacter = event => {
+		event.preventDefault();
+
+		const modifiedInit = calculateModifier( parseInt( this.dexRef.current.value ) ) + parseInt( this.initRef.current.value );
+		const character = {
+			index: this.props.characterIndex,
+			name: this.nameRef.current.value,
+			dex: parseInt( this.dexRef.current.value ),
+			hp: parseInt( this.hpRef.current.value ),
+			init: modifiedInit,
+		}
+		this.props.addCharacter( character );
+		event.currentTarget.reset();
+	}
+
 	render() {
 		const index = this.props.characterIndex;
 		return (
