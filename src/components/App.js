@@ -9,7 +9,30 @@ class App extends React.Component {
 	state = {
 		characterCount: 0, // The total number of characters on the page.
 		npcCount: 0, // The total number of NPCs on the page.
-		characters: {}, // A list of all the characters
+		characters: {}, // A list of all the characters.
+		npcs: {}, // A list of all the NPCs & monsters.
+	}
+
+	updateCharacters = ( key, updatedCharacter ) => {
+		// Copy the current state.
+		const characters = { ...this.state.characters };
+
+		// Update the state.
+		characters[key] = updatedCharacter;
+
+		// Set that to state.
+		this.setState( { characters } );
+	}
+
+	updateNPCs = ( key, updatedNPC ) => {
+		// Copy the current state.
+		const npcs = { ...this.state.npcs };
+
+		// Update the state.
+		npcs[key] = updatedNPC;
+
+		// Set that to state.
+		this.setState( { npcs } );
 	}
 
 	updateCharacterCount = () => {
