@@ -3,6 +3,7 @@ import Header from './Header';
 import Initiative from './Initiative';
 import Characters from './Characters';
 import NPCs from './NPCs';
+import Save from './Save';
 
 class App extends React.Component {
 	render() {
@@ -13,6 +14,7 @@ class App extends React.Component {
 				<Initiative />
 				<Characters />
 				<NPCs />
+				<Save />
 			</div>
 			</>
 		)
