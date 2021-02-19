@@ -2,6 +2,10 @@ import React from 'react';
 import { calculateModifier } from '../helpers';
 
 class AddCharacterForm extends React.Component {
+	nameRef = React.createRef();
+	dexRef = React.createRef();
+	hpRef = React.createRef();
+	initRef = React.createRef();
 	render() {
 		const index = this.props.characterIndex;
 		return (
