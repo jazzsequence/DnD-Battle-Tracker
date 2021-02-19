@@ -9,7 +9,7 @@ class App extends React.Component {
 	state = {
 		characterCount: 0, // The total number of characters on the page.
 		npcCount: 0, // The total number of NPCs on the page.
-		// characters: {}, // A list of all the characters
+		characters: {}, // A list of all the characters
 	}
 
 	updateCharacterCount = () => {
@@ -32,7 +32,7 @@ class App extends React.Component {
 				<Characters
 					characterIndex={ this.state.characterCount }
 					updateCharacterCount={ this.updateCharacterCount }
-					// characters={ this.state.characters }
+					characters={ this.state.characters }
 				/>
 				<NPCs
 					characterIndex={ this.state.npcCount }
