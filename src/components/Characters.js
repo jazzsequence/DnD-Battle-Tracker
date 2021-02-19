@@ -3,7 +3,9 @@ import CharacterList from './CharacterList';
 import AddNewButton from './AddNewButton';
 
 class Characters extends React.Component {
+	addCharacter = ( character ) => {
 
+	}
 	render() {
 		return (
 		<div className="characters">
