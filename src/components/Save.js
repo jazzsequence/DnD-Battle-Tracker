@@ -7,7 +7,7 @@ class Save extends React.Component {
 		return (
 			<div className="start" id="save-fields">
 				<SaveButton />
-				<p class="description" id="save-all-fields-desc">Click the button when all characters have been added to start the battle!</p>
+				<p className="description" id="save-all-fields-desc">Click the button when all characters have been added to start the battle!</p>
 			</div>
 		)
 	}
