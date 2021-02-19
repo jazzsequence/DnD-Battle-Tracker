@@ -42,7 +42,6 @@ class App extends React.Component {
 
 	updateNpcCount = () => {
 		const count = this.state.npcCount + 1;
-
 		this.setState( { npcCount: count } );
 	}
 
@@ -56,10 +55,13 @@ class App extends React.Component {
 					characterIndex={ this.state.characterCount }
 					updateCharacterCount={ this.updateCharacterCount }
 					characters={ this.state.characters }
+					updateCharacters={ this.updateCharacters }
 				/>
 				<NPCs
 					characterIndex={ this.state.npcCount }
 					updateCharacterCount={ this.updateNpcCount }
+					npcs={ this.state.npcs }
+					updateNPCs={ this.updateNPCs }
 				/>
 				<Save />
 			</div>
