@@ -11,8 +11,10 @@ class Characters extends React.Component {
 			<CharacterList
 				type="character"
 			/>
-			<AddNewButton
-				type="character"
+			<AddCharacterForm
+				addCharacter={ this.addCharacter }
+				characterIndex={ this.props.characterIndex }
+				updateCharacterCount={ this.props.updateCharacterCount }
 			/>
 		</div>
 		)
