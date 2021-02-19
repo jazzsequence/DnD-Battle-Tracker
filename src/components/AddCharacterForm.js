@@ -18,7 +18,14 @@ class AddCharacterForm extends React.Component {
 			hp: parseInt( this.hpRef.current.value ),
 			init: modifiedInit,
 		}
+
+		// Pass the character object upstream.
 		this.props.addCharacter( character );
+
+		// Update the character index.
+		this.props.updateCharacterCount();
+
+		// Reset the form.
 		event.currentTarget.reset();
 	}
 
