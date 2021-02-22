@@ -47,6 +47,25 @@ class App extends React.Component {
 		this.setState( { npcCount: count } );
 	}
 
+	componentDidUpdate() {
+		const npcCount = this.state.npcCount;
+		const characterCount = this.state.characterCount;
+
+		// Bail if the battle has already started.
+		if ( this.state.battleStarted ) {
+			return;
+		}
+
+		// Bail if we've already started the fight.
+		if ( this.state.battleCanStart ) {
+			return;
+		}
+
+		if ( npcCount > 0 && characterCount > 0 ) {
+			this.setState( { battleCanStart: true } );
+		}
+	}
+
 	render() {
 		return (
 			<>
