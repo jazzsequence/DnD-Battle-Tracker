@@ -84,6 +84,9 @@ class CharacterSingle extends React.Component {
 
 		// Update the status.
 		this.setState( { status } );
+
+		// Update the message.
+		this.setState( { message: this.getMessage( this.props.details.name, status, damage ) } );
 	}
 
 	render() {
