@@ -10,6 +10,19 @@ class CharacterSingle extends React.Component {
 		status: '' // nothing, died, healed, revived, damaged
 	}
 
+	getMessage = ( name, status, damage ) => {
+		const messages = {
+			nothing: '🤷‍♂️ Nothing happened.',
+			died: `😱 ${ name } died!`,
+			healed: `❇️ ${ name } was healed for ${ Math.abs( damage ) } points!`,
+			revived: `✨ ${ name } was revived!`,
+			damaged: `💥 ${ name } took ${ Math.abs( damage ) } damage!`,
+			dead: `💀 ${ name } is dead.`
+		}
+
+		return messages[ status ];
+	};
+
 	updateHp = ( damage, maxHp ) => {
 		const oldHp = this.state.hp ?? 0;
 		let newHp = oldHp - parseInt( damage );
