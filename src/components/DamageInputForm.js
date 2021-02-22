@@ -26,6 +26,7 @@ class DamageInputForm extends React.Component {
 				/>
 				<button
 					id={`character-${this.props.id}-damage-btn`}
+					disabled={ ! this.props.battleStarted }
 				>Record Damage</button>
 			</form>
 		)
