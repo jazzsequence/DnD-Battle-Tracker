@@ -9,8 +9,8 @@ class App extends React.Component {
 	state = {
 		characterCount: 0, // The total number of characters on the page.
 		npcCount: 0, // The total number of NPCs on the page.
-		characters: {}, // A list of all the characters.
-		npcs: {}, // A list of all the NPCs & monsters.
+		characters: [], // A list of all the characters.
+		npcs: [], // A list of all the NPCs & monsters.
 		battleStarted: false,
 		battleCanStart: false,
 	}
