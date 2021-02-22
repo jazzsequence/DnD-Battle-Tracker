@@ -25,10 +25,6 @@ input {
 	font-size: 0.9rem;
 	color: $white;
 
-	&:disabled {
-		background-color: rgba( 255, 255, 255, 0.1 );
-	}
-
 	// Hide the number input arrows in firefox.
 	&[type="number"] {
 		-moz-appearance: textfield;
@@ -39,6 +35,10 @@ input {
 	&::-webkit-inner-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
+	}
+
+	&:disabled {
+		background-color: rgba( 255, 255, 255, 0.1 );
 	}
 }
 
