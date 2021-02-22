@@ -84,6 +84,7 @@ class CharacterSingle extends React.Component {
 					updateHp={ this.updateHp }
 					characterStatus={ this.state.status }
 					updateStatus={ this.updateStatus }
+					battleStarted={ this.props.battleStarted }
 				/>
 				<DamageUpdateMessage
 					status={ this.state.status }

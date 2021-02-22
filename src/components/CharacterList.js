@@ -11,6 +11,7 @@ class CharacterList extends React.Component {
 						key={ key }
 						details={ characterList[key] }
 						type={ this.props.type }
+						battleStarted={ this.props.battleStarted }
 					/> )
 			)
 		}

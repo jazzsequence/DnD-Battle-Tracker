@@ -12,6 +12,7 @@ class Characters extends React.Component {
 			<CharacterList
 				type="character"
 				characters={ this.props.characters }
+				battleStarted={ this.props.battleStarted }
 			/>
 			<AddCharacterForm
 				type="character"
