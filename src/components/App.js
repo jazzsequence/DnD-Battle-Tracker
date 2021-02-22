@@ -12,6 +12,7 @@ class App extends React.Component {
 		characters: {}, // A list of all the characters.
 		npcs: {}, // A list of all the NPCs & monsters.
 		battleStarted: false,
+		battleCanStart: false,
 	}
 
 	updateCharacters = ( key, updatedCharacter ) => {
