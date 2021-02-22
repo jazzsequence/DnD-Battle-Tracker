@@ -1,6 +1,5 @@
 import React from 'react';
 import DamageInputForm from './DamageInputForm';
-import DamageUpdateMessage from './DamageUpdateMessage';
 
 class CharacterSingle extends React.Component {
 	state = {
@@ -12,12 +11,42 @@ class CharacterSingle extends React.Component {
 
 	getMessage = ( name, status, damage ) => {
 		const messages = {
-			nothing: '🤷‍♂️ Nothing happened.',
-			died: `😱 ${ name } died!`,
-			healed: `❇️ ${ name } was healed for ${ Math.abs( damage ) } points!`,
-			revived: `✨ ${ name } was revived!`,
-			damaged: `💥 ${ name } took ${ Math.abs( damage ) } damage!`,
-			dead: `💀 ${ name } is dead.`
+			nothing: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">🤷‍♂️</span> <span className={ status }>Nothing happened.</span>
+			</span>,
+			died: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">😱</span> <span className={ status }>{ name } died!</span>
+			</span>,
+			healed: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">❇️ </span> <span className={ status }>{ name } was healed for { Math.abs( damage ) } points!</span>
+			</span>,
+			revived: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">✨</span> <span className={ status }>{ name } was revived!</span>
+			</span>,
+			damaged: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">💥</span> <span className={ status }>{ name } took { Math.abs( damage ) } damage!</span>
+			</span>,
+			dead: <span
+				className="hp-update-msg"
+				id={`hpUpdateMsg-${this.props.details.index}`}
+			>
+				<span className="emoji">💀</span> <span className={ status }>{ name } is dead.</span>
+			</span>
 		}
 
 		return messages[ status ];
@@ -107,10 +136,7 @@ class CharacterSingle extends React.Component {
 					updateStatus={ this.updateStatus }
 					battleStarted={ this.props.battleStarted }
 				/>
-				<DamageUpdateMessage
-					id={ character.index }
-					message={ this.state.message }
-				/>
+				{ this.state.message }
 			</li>
 		)
 	}
