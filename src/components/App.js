@@ -66,7 +66,9 @@ class App extends React.Component {
 					updateNPCs={ this.updateNPCs }
 					battleStarted={ this.state.battleStarted }
 				/>
-				<Save />
+				<Save
+					battleStarted={ this.state.battleStarted }
+				/>
 			</div>
 			</>
 		)

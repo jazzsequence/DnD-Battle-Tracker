@@ -3,7 +3,12 @@ import React from 'react';
 class SaveButton extends React.Component {
 
 	render() {
-		return (<button id="save-all-fields" disabled>Let's go! 💥</button>)
+		return (
+			<button
+				id="save-all-fields"
+				disabled={ ! this.props.battleStarted }
+			>Let's go! 💥</button>
+		)
 	}
 }
 
