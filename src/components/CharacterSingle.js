@@ -108,6 +108,7 @@ class CharacterSingle extends React.Component {
 					battleStarted={ this.props.battleStarted }
 				/>
 				<DamageUpdateMessage
+					id={ character.index }
 					message={ this.state.message }
 				/>
 			</li>
