@@ -17,10 +17,20 @@ class App extends React.Component {
 
 	updateCharacters = ( key, updatedCharacter ) => {
 		// Copy the current state.
-		const characters = { ...this.state.characters };
+		const characters = this.state.characters;
 
 		// Update the state.
 		characters[key] = updatedCharacter;
+
+		// Sort the characters.
+		characters.sort(
+			// Sort by initiative first.
+			( a, b ) => ( a.init < b.init ) ? 1 :
+				// If initiative is the same, sort by dex.
+				( a.init === b.init ) ? (
+					( a.dex < b.dex ) ? 1 : -1
+				) : -1
+		)
 
 		// Set that to state.
 		this.setState( { characters } );
@@ -28,10 +38,20 @@ class App extends React.Component {
 
 	updateNPCs = ( key, updatedNPC ) => {
 		// Copy the current state.
-		const npcs = { ...this.state.npcs };
+		const npcs = this.state.npcs;
 
 		// Update the state.
 		npcs[key] = updatedNPC;
+
+		// Sort the characters.
+		npcs.sort(
+			// Sort by initiative first.
+			( a, b ) => ( a.init < b.init ) ? 1 :
+				// If initiative is the same, sort by dex.
+				( a.init === b.init ) ? (
+					( a.dex < b.dex ) ? 1 : -1
+				) : -1
+		)
 
 		// Set that to state.
 		this.setState( { npcs } );
