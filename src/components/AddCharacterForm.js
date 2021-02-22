@@ -32,8 +32,8 @@ class AddCharacterForm extends React.Component {
 			// Update the character index.
 			this.props.updateCharacterCount();
 		} else {
-			this.props.updateNPCs( character.index, character );
-			this.props.updateNpcCount();
+			// this.props.updateNPCs( character.index, character );
+			// this.props.updateNpcCount();
 		}
 
 		// Reset the form.

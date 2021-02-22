@@ -60,8 +60,8 @@ class App extends React.Component {
 				<NPCs
 					characterIndex={ this.state.npcCount }
 					updateCharacterCount={ this.updateNpcCount }
-					npcs={ this.state.npcs }
-					updateNPCs={ this.updateNPCs }
+					characters={ this.state.npcs }
+					updateCharacters={ this.updateNPCs }
 				/>
 				<Save />
 			</div>
