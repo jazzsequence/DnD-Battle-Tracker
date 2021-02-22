@@ -1,10 +1,9 @@
 import React from 'react';
 
 class DamageUpdateMessage extends React.Component {
-
 	render() {
 		return (
-			<span></span>
+			<span>{ this.props.message }</span>
 		)
 	}
 }
