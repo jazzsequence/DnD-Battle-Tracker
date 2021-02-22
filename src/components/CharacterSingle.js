@@ -76,8 +76,11 @@ class CharacterSingle extends React.Component {
 		const isPC = this.props.type === 'character' ? 'PC' : 'NPC';
 		return (
 			<li id={`character-${character.index}`}>
-					{ character.name } ({ character.init }) ({ isPC })
-					<strong>HP:</strong> { this.state.hp }
+					<span className="character-details" id={`character-${character.index}-details`}>{ character.name } ({ character.init }) ({ isPC })</span>
+					<span className="character-hp" id={`character-${character.index}-hp`}>
+						<span className="hp-label">HP: </span>
+						{ this.state.hp }
+					</span>
 				<DamageInputForm
 					id={ character.index }
 					hp={ character.hp }
