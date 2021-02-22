@@ -32,18 +32,6 @@
 			}
 		}
 
-		.dead {
-			color: $brown;
-		}
-
-		.healed {
-			color: $green;
-		}
-
-		.revived {
-			color: $blue;
-		}
-
 		button {
 			justify-self: end;
 		}
@@ -59,6 +47,7 @@
 				align-items: start;
 				padding: 8px 3px 0;
 				display: grid;
+				grid-template-rows: auto;
 				grid-template-areas:
 				"details hp damage"
 				"message message message"
@@ -90,6 +79,40 @@
 						justify-self: center;
 					}
 				}
+
+				.hp-update-msg {
+					grid-area: message;
+					color: $green;
+
+					.emoji {
+						padding-right: 0.5rem;
+					}
+
+					.revived {
+						color: $blue;
+						font-style: italic;
+					}
+
+					.nothing {
+						color: $yellow;
+						font-style: normal;
+					}
+
+					.damaged {
+						color: $red;
+						font-style: italic;
+					}
+
+					.died {
+						color: $brown;
+						font-style: italic;
+					}
+
+					.healed {
+						color: $green;
+						font-style: italic;
+					}
+				}
 			}
 		}
 	}
@@ -118,31 +141,6 @@
 			grid-area: button;
 			grid-column-start: -1;
 			align-self: center;
-		}
-	}
-
-	.hp-update-msg {
-		color: $green;
-		font-style: italic;
-
-		&.nothing {
-			color: $yellow;
-			font-style: normal;
-		}
-
-		&.damaged {
-			color: $red;
-			font-style: italic;
-		}
-
-		&.died {
-			color: $brown;
-			font-style: italic;
-		}
-
-		&.healed {
-			color: $green;
-			font-style: italic;
 		}
 	}
 }

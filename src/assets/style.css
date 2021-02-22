@@ -92,15 +92,6 @@ button {
       .battle-tracker .characters .character-edit .character-dex,
       .battle-tracker .monsters-npcs .character-edit .character-dex {
         width: auto; }
-    .battle-tracker .characters .dead,
-    .battle-tracker .monsters-npcs .dead {
-      color: #b06f6b; }
-    .battle-tracker .characters .healed,
-    .battle-tracker .monsters-npcs .healed {
-      color: #40a07c; }
-    .battle-tracker .characters .revived,
-    .battle-tracker .monsters-npcs .revived {
-      color: #3368dc; }
     .battle-tracker .characters button,
     .battle-tracker .monsters-npcs button {
       justify-self: end; }
@@ -116,6 +107,7 @@ button {
         align-items: start;
         padding: 8px 3px 0;
         display: grid;
+        grid-template-rows: auto;
         grid-template-areas: "details hp damage" "message message message"; }
         .battle-tracker .characters ul li:nth-child(even),
         .battle-tracker .monsters-npcs ul li:nth-child(even) {
@@ -139,6 +131,33 @@ button {
           .battle-tracker .monsters-npcs ul li .record-damage button {
             font-size: 0.8rem;
             justify-self: center; }
+        .battle-tracker .characters ul li .hp-update-msg,
+        .battle-tracker .monsters-npcs ul li .hp-update-msg {
+          grid-area: message;
+          color: #40a07c; }
+          .battle-tracker .characters ul li .hp-update-msg .emoji,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .emoji {
+            padding-right: 0.5rem; }
+          .battle-tracker .characters ul li .hp-update-msg .revived,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .revived {
+            color: #3368dc;
+            font-style: italic; }
+          .battle-tracker .characters ul li .hp-update-msg .nothing,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .nothing {
+            color: #dcc484;
+            font-style: normal; }
+          .battle-tracker .characters ul li .hp-update-msg .damaged,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .damaged {
+            color: #b73241;
+            font-style: italic; }
+          .battle-tracker .characters ul li .hp-update-msg .died,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .died {
+            color: #b06f6b;
+            font-style: italic; }
+          .battle-tracker .characters ul li .hp-update-msg .healed,
+          .battle-tracker .monsters-npcs ul li .hp-update-msg .healed {
+            color: #40a07c;
+            font-style: italic; }
   .battle-tracker .characters {
     grid-area: characters; }
   .battle-tracker .monsters-npcs {
@@ -156,18 +175,3 @@ button {
       grid-area: button;
       grid-column-start: -1;
       align-self: center; }
-  .battle-tracker .hp-update-msg {
-    color: #40a07c;
-    font-style: italic; }
-    .battle-tracker .hp-update-msg.nothing {
-      color: #dcc484;
-      font-style: normal; }
-    .battle-tracker .hp-update-msg.damaged {
-      color: #b73241;
-      font-style: italic; }
-    .battle-tracker .hp-update-msg.died {
-      color: #b06f6b;
-      font-style: italic; }
-    .battle-tracker .hp-update-msg.healed {
-      color: #40a07c;
-      font-style: italic; }
