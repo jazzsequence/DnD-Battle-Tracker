@@ -17,7 +17,7 @@ class AddCharacterForm extends React.Component {
 
 		const modifiedInit = calculateModifier( parseInt( this.dexRef.current.value ) ) + parseInt( this.initRef.current.value );
 		const character = {
-			index: this.props.characterIndex,
+			index: this.props.characterIndex ?? this.props.npcIndex,
 			name: this.nameRef.current.value,
 			dex: parseInt( this.dexRef.current.value ),
 			hp: parseInt( this.hpRef.current.value ),
