@@ -68,7 +68,7 @@ class App extends React.Component {
 					battleStarted={ this.state.battleStarted }
 				/>
 				<Save
-					battleStarted={ this.state.battleStarted }
+					battleCanStart={ this.state.battleCanStart }
 				/>
 			</div>
 			</>
