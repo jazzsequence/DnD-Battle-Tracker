@@ -11,6 +11,7 @@ class App extends React.Component {
 		npcCount: 0, // The total number of NPCs on the page.
 		characters: {}, // A list of all the characters.
 		npcs: {}, // A list of all the NPCs & monsters.
+		battleStarted: false,
 	}
 
 	updateCharacters = ( key, updatedCharacter ) => {
@@ -56,12 +57,14 @@ class App extends React.Component {
 					updateCharacterCount={ this.updateCharacterCount }
 					characters={ this.state.characters }
 					updateCharacters={ this.updateCharacters }
+					battleStarted={ this.state.battleStarted }
 				/>
 				<NPCs
 					characterIndex={ this.state.npcCount }
 					updateCharacterCount={ this.updateNpcCount }
 					characters={ this.state.npcs }
 					updateCharacters={ this.updateNPCs }
+					battleStarted={ this.state.battleStarted }
 				/>
 				<Save />
 			</div>
