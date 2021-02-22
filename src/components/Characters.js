@@ -3,8 +3,6 @@ import CharacterList from './CharacterList';
 import AddCharacterForm from './AddCharacterForm';
 
 class Characters extends React.Component {
-	buildName = ( a, b, c ) => {}
-
 	render() {
 		return (
 		<div className="characters">
