@@ -40,6 +40,11 @@ input {
   color: #f3f2e8; }
   input:disabled {
     background-color: rgba(255, 255, 255, 0.1); }
+  input[type="number"] {
+    -moz-appearance: textfield; }
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
 
 ul {
   list-style: none;
@@ -109,14 +114,6 @@ button {
       .battle-tracker .characters .character-edit .character-dex,
       .battle-tracker .monsters-npcs .character-edit .character-dex {
         width: auto; }
-      .battle-tracker .characters .character-edit input[type="number"],
-      .battle-tracker .monsters-npcs .character-edit input[type="number"] {
-        -moz-appearance: textfield; }
-      .battle-tracker .characters .character-edit input::-webkit-outer-spin-button, .battle-tracker .characters .character-edit input::-webkit-inner-spin-button,
-      .battle-tracker .monsters-npcs .character-edit input::-webkit-outer-spin-button,
-      .battle-tracker .monsters-npcs .character-edit input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0; }
     .battle-tracker .characters button,
     .battle-tracker .monsters-npcs button {
       justify-self: end; }
