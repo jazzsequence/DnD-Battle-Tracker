@@ -7,7 +7,7 @@ class SaveButton extends React.Component {
 			<button
 				id="save-all-fields"
 				disabled={ ! this.props.battleCanStart }
-				onClick={ this.props.updateInitOrder }
+				onClick={ this.props.updateBattleStarted }
 			>Let's go! 💥</button>
 		)
 	}

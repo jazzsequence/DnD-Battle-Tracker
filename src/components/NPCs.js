@@ -11,6 +11,7 @@ class NPCs extends React.Component {
 				<CharacterList
 					type="monster-npc"
 					characters={ this.props.npcs }
+					battleStarted={ this.props.battleStarted }
 				/>
 				<AddCharacterForm
 					type="npc"

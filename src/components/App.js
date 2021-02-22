@@ -86,6 +86,14 @@ class App extends React.Component {
 		}
 	}
 
+	updateBattleStarted = () => {
+		if ( this.state.battleStarted ) {
+			return;
+		}
+
+		this.setState( { battleStarted: true } );
+	}
+
 	componentDidUpdate() {
 		// Handle starting the battle.
 		this.maybeUpdateBattleCanStart();
@@ -113,6 +121,7 @@ class App extends React.Component {
 				/>
 				<Save
 					battleCanStart={ this.state.battleCanStart }
+					updateBattleStarted={ this.updateBattleStarted }
 				/>
 			</div>
 			</>
