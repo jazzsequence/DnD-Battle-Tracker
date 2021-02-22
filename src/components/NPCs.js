@@ -14,9 +14,9 @@ class NPCs extends React.Component {
 				/>
 				<AddCharacterForm
 					type="npc"
-					characterIndex={ this.props.characterIndex }
-					updateCharacterCount={ this.props.updateCharacterCount }
-					updateCharacters={ this.props.updateCharacters }
+					npcIndex={ this.props.npcIndex }
+					updateNpcCount={ this.props.updateNpcCount }
+					updateNPCs={ this.props.updateNPCs }
 
 				/>
 			</div>
