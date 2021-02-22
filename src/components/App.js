@@ -60,10 +60,10 @@ class App extends React.Component {
 					battleStarted={ this.state.battleStarted }
 				/>
 				<NPCs
-					characterIndex={ this.state.npcCount }
-					updateCharacterCount={ this.updateNpcCount }
-					characters={ this.state.npcs }
-					updateCharacters={ this.updateNPCs }
+					npcIndex={ this.state.npcCount }
+					updateNpcCount={ this.updateNpcCount }
+					npcs={ this.state.npcs }
+					updateNPCs={ this.updateNPCs }
 					battleStarted={ this.state.battleStarted }
 				/>
 				<Save />
