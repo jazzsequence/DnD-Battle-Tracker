@@ -47,7 +47,7 @@ class App extends React.Component {
 		this.setState( { npcCount: count } );
 	}
 
-	componentDidUpdate() {
+	maybeUpdateBattleCanStart = () => {
 		const npcCount = this.state.npcCount;
 		const characterCount = this.state.characterCount;
 
@@ -64,6 +64,11 @@ class App extends React.Component {
 		if ( npcCount > 0 && characterCount > 0 ) {
 			this.setState( { battleCanStart: true } );
 		}
+	}
+
+	componentDidUpdate() {
+		// Handle starting the battle.
+		this.maybeUpdateBattleCanStart();
 	}
 
 	render() {
