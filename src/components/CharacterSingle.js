@@ -5,6 +5,8 @@ import DamageUpdateMessage from './DamageUpdateMessage';
 class CharacterSingle extends React.Component {
 	state = {
 		hp: this.props.details.hp,
+		damage: 0,
+		message: '',
 		status: '' // nothing, died, healed, revived, damaged
 	}
 
@@ -29,7 +31,7 @@ class CharacterSingle extends React.Component {
 		};
 
 		this.setState( { hp: newHp } );
-
+		this.setState( { damage } );
 		this.updateStatus( updatedStats );
 	}
 
