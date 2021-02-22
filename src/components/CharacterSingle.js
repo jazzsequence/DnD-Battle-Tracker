@@ -77,7 +77,7 @@ class CharacterSingle extends React.Component {
 		return (
 			<li id={`character-${character.index}`}>
 					{ character.name } ({ character.init }) ({ isPC })
-					HP: { this.state.hp }
+					<strong>HP:</strong> { this.state.hp }
 				<DamageInputForm
 					id={ character.index }
 					hp={ character.hp }
