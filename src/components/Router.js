@@ -8,9 +8,7 @@ const Router = () => (
 	<BrowserRouter>
 		<Switch>
 			<Route exact path="/" component={Home} />
-			<Route exact path="/DnD-Battle-Tracker/" component={Home} />
 			<Route path="/:encounterGuid" component={App} />
-			<Route path="/DnD-Battle-Tracker/:encounterGuid" component={App} />
 			<Route component={NotFound} />
 		</Switch>
 	</BrowserRouter>
