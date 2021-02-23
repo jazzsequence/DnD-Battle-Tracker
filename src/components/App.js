@@ -11,8 +11,8 @@ class App extends React.Component {
 		npcCount: 0, // The total number of NPCs on the page.
 		characters: [], // A list of all the characters.
 		npcs: [], // A list of all the NPCs & monsters.
-		battleStarted: false,
-		battleCanStart: false,
+		battleCanStart: false, // If the battle is ready to start.
+		battleStarted: false, // If the battle has started.
 	}
 
 	componentDidMount() {
