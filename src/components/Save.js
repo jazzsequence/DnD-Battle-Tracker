@@ -4,10 +4,12 @@ import SaveButton from './SaveButton';
 class Save extends React.Component {
 
 	render() {
+		const maybeHideButton = this.props.battleStarted ? 'hidden' : '';
+
 		return (
 			<div className="start" id="save-fields">
 				<button
-					className="load-sample-encounter"
+					className={`load-sample-encounter ${maybeHideButton}`}
 					onClick={ this.props.loadSampleEncounter }
 				>Load Sample Encounter</button>
 
