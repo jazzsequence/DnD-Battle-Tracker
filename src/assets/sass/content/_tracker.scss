@@ -141,8 +141,9 @@
 	#save-fields {
 		grid-area: save;
 		display: grid;
+		grid-gap: 10px;
 		grid-template-columns: 1fr auto;
-		grid-template-areas: "description button";
+		grid-template-areas: "description button1 button2";
 
 		p {
 			grid-area: description;
@@ -151,9 +152,14 @@
 		}
 
 		button {
-			grid-area: button;
-			grid-column-start: -1;
-			align-self: center;
+			&.load-sample-encounter {
+				grid-area: button1;
+			}
+			&#save-all-fields {
+				grid-area: button2;
+				grid-column-start: -1;
+				align-self: center;
+			}
 		}
 	}
 }
