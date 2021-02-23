@@ -14,6 +14,14 @@ class App extends React.Component {
 		battleCanStart: false,
 	}
 
+	componentDidMount() {
+		const { params } = this.props.match,
+			localStorageRef = localStorage.getItem( params.encounterGuid );
+
+		if ( localStorageRef ) {
+			this.setState( JSON.parse( localStorageRef ) );
+		}
+	}
 
 	componentDidUpdate() {
 		// Handle starting the battle.
