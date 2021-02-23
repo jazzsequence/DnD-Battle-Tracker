@@ -16,7 +16,14 @@ class SaveButton extends React.Component {
 				id="save-all-fields"
 				disabled={ ! this.props.battleCanStart }
 				onClick={ () => {
-			>Let's go! 💥</button>
+					if ( ! this.props.battleStarted ) {
+						// If the battle hasn't started yet, this button will handle kicking it off.
+						return this.props.updateBattleStarted()
+					} else {
+						// Otherwise, the button will save the characters but reset the encounter/npcs.
+						return this.props.resetEncounter()
+					}
+				} }
 			>{ this.getButtonText() }</button>
 		)
 	}
