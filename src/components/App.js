@@ -14,6 +14,12 @@ class App extends React.Component {
 		battleCanStart: false,
 	}
 
+
+	componentDidUpdate() {
+		// Handle starting the battle.
+		this.maybeUpdateBattleCanStart();
+	}
+
 	updateCharacters = ( key, updatedCharacter ) => {
 		// Copy the current state.
 		const characters = this.state.characters;
@@ -91,11 +97,6 @@ class App extends React.Component {
 		}
 
 		this.setState( { battleStarted: true } );
-	}
-
-	componentDidUpdate() {
-		// Handle starting the battle.
-		this.maybeUpdateBattleCanStart();
 	}
 
 	render() {
