@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "dev": "concurrently --prefix name \"npm run start\" \"npm run watch\"",
     "watch": "gulp watch",
-    "build": "react-scripts build && npm run build:css",
+    "build": "npm run build:css && react-scripts build && mv build dist",
     "build:css": "gulp build",
     "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
     "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
