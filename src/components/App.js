@@ -30,8 +30,6 @@ class App extends React.Component {
 		localStorage.setItem( this.props.match.params.encounterGuid, JSON.stringify( this.state ) );
 	}
 
-	}
-
 	updateCharacters = ( key, updatedCharacter ) => {
 		// Copy the current state.
 		const characters = this.state.characters;
