@@ -39,8 +39,6 @@
     "run-script-os": "^1.1.5"
   },
   "dependencies": {
-    "firebase": "^8.2.9",
-    "re-base": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
