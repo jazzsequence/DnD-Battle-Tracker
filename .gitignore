@@ -1,8 +1,5 @@
 # OS Files
 .DS_Store
 
-# Built files
-public
-
 # NPM stuff
 node_modules
