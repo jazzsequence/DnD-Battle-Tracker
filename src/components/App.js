@@ -110,6 +110,17 @@ class App extends React.Component {
 		this.setState( { battleStarted: true } );
 	}
 
+	resetEncounter = () => {
+		this.setState( {
+			characters: this.state.characters,
+			characterCount: this.state.characterCount,
+			npcs: [],
+			npcCount: 0,
+			battleCanStart: false,
+			battleStarted: false,
+		} );
+	}
+
 	loadSampleEncounter = () => {
 		this.setState( sampleState );
 	}
@@ -138,6 +149,7 @@ class App extends React.Component {
 					updateBattleStarted={ this.updateBattleStarted }
 					loadSampleEncounter={ this.loadSampleEncounter }
 					battleStarted={ this.state.battleStarted }
+					resetEncounter={ this.resetEncounter }
 				/>
 			</div>
 			</>
