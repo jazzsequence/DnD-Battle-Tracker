@@ -15,6 +15,20 @@ After completing his [CSS Grid](https://cssgrid.io/) course, I decided to revisi
 
 Next up is integrating browser storage ~and possibly refactoring as a React app~.
 
+## Development notes
+Re-base is no longer supported, or at least, it hasn't been updated in an age. As such, installing on current Node causes issues. It's recommended if you intend to clone and fork this yourself that you use `nvm` to install and use an earlier version of Node.
+
+### Recommended configuration
+
+1. [Install nvm](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating). Make sure it's configured properly (editing your `.bashrc` or `.zshrc` or whatever you use). [This Stack Overflow answer](https://stackoverflow.com/a/63671860) may be helpful in getting `nvm` working correctly.
+2. Install and use Node 12.0.0:
+```bash
+$ nvm install 12.0.0
+$ nvm use 12.0.0
+```
+
+The Node packages should install correctly. To switch back to the system installed version, simply use `nvm use system`.
+
 ## Roadmap
 These are things I plan (or at least _hope_) to implement in the future.
 
