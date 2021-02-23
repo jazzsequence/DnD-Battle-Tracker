@@ -9,9 +9,11 @@
 	@if $level == h1 {
 		font-family: $title;
 		font-weight: 300;
+		margin-bottom: 0;
 	}
 
 	@if $level == h2 {
 		font-family: $heading;
 	}
+
 }

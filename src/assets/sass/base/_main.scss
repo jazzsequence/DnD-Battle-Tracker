@@ -8,6 +8,19 @@ header {
 	display: grid;
 	grid-template-columns: 1fr;
 	justify-items: center;
+	margin-bottom: 2em;
+
+	a {
+		text-decoration: none;
+		color: $white;
+		border-bottom: 1px solid transparent;
+
+		&:hover,
+		&:active {
+			border-bottom: 1px dotted $white;
+		}
+	}
+
 }
 
 h1 {
@@ -25,6 +38,18 @@ input {
 	font-size: 0.9rem;
 	color: $white;
 
+	// Hide the number input arrows in firefox.
+	&[type="number"] {
+		-moz-appearance: textfield;
+	}
+
+	// Hide the number input arrows in chrome, safari, edge & opera.
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
 	&:disabled {
 		background-color: rgba( 255, 255, 255, 0.1 );
 	}
@@ -33,4 +58,9 @@ input {
 ul {
 	list-style: none;
 	padding: 0;
+}
+
+span.hp-label {
+	font-family: $heading;
+	line-height: 2em;
 }

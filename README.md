@@ -13,12 +13,13 @@ I originally built this as an experiment after finishing [Wes Bos](https://githu
 
 After completing his [CSS Grid](https://cssgrid.io/) course, I decided to revisit this again to add some much-needed styling and layout.
 
-Next up is integrating browser storage and possibly refactoring as a React app.
+...more stuff here...
 
 ## Roadmap
 These are things I plan (or at least _hope_) to implement in the future.
 
-* Use browser storage to retain party data after refresh
+* Accessibility
+* Actual SWA
 * Allow encounters to be reset without losing data
 * Initiative randomizer (define initiative rather than entering rolled values)
 * Attack options (each character/monster has their attacks & damage listed so dealing damage can be done by just clicking the button next to that attack type)

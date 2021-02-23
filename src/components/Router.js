@@ -1,0 +1,19 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import App from './App';
+import Home from './Home';
+import NotFound from './NotFound';
+
+const Router = () => (
+	<BrowserRouter>
+		<Switch>
+			<Route exact path="/" component={Home} />
+			<Route exact path="/DnD-Battle-Tracker/" component={Home} />
+			<Route path="/:encounterGuid" component={App} />
+			<Route path="/DnD-Battle-Tracker/:encounterGuid" component={App} />
+			<Route component={NotFound} />
+		</Switch>
+	</BrowserRouter>
+)
+
+export default Router;
