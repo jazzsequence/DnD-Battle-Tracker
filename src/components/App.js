@@ -3,6 +3,7 @@ import Header from './Header';
 import Characters from './Characters';
 import NPCs from './NPCs';
 import Save from './Save';
+import sampleState from '../sample-encounter';
 
 class App extends React.Component {
 	state = {
@@ -109,6 +110,10 @@ class App extends React.Component {
 		this.setState( { battleStarted: true } );
 	}
 
+	loadSampleEncounter = () => {
+		this.setState( sampleState );
+	}
+
 	render() {
 		return (
 			<>
@@ -131,6 +136,7 @@ class App extends React.Component {
 				<Save
 					battleCanStart={ this.state.battleCanStart }
 					updateBattleStarted={ this.updateBattleStarted }
+					loadSampleEncounter={ this.loadSampleEncounter }
 				/>
 			</div>
 			</>

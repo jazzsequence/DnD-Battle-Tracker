@@ -6,6 +6,11 @@ class Save extends React.Component {
 	render() {
 		return (
 			<div className="start" id="save-fields">
+				<button
+					className="load-sample-encounter"
+					onClick={ this.props.loadSampleEncounter }
+				>Load Sample Encounter</button>
+
 				<SaveButton
 					battleCanStart={ this.props.battleCanStart }
 					updateBattleStarted={ this.props.updateBattleStarted }
