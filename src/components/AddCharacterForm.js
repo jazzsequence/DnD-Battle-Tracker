@@ -45,8 +45,9 @@ class AddCharacterForm extends React.Component {
 	 */
 	render() {
 		const index = this.props.characterIndex;
+		const maybeHidden = this.props.battleStarted ? 'hidden' : '';
 		return (
-			<form className="character-edit" onSubmit={ this.createCharacter }>
+			<form className={`character-edit ${maybeHidden}`} onSubmit={ this.createCharacter }>
 				<input
 					name="character-name"
 					className="character-name"
