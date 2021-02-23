@@ -100,3 +100,18 @@ export function getModifier( dexScore ) {
 
 	return modValue;
 }
+
+/**
+ * Generate a unique GUID.
+ *
+ * @return {string} A unique GUID in the format: xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx
+ */
+export function generateGuid() {
+	let s4 = () => {
+		return Math.floor( ( 1 + Math.random() ) * 0x10000 )
+			.toString(16)
+			.substring(1);
+	}
+
+	return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
