@@ -67,7 +67,7 @@ span.hp-label {
   line-height: 2em; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
 
 button {
   background: #dcc484;
