@@ -24,6 +24,7 @@ Finally, continuing my JavaScript education, I took his [React for Beginners](ht
 These are things I plan (or at least _hope_) to implement in the future.
 
 * Accessibility
+* A button that resets the character HP when the encounter is reset (currently HP can be reset by refreshing the page)
 * Initiative randomizer (define initiative rather than entering rolled values)
 * Attack options (each character/monster has their attacks & damage listed so dealing damage can be done by just clicking the button next to that attack type)
 * Unit tests and linting
