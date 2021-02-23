@@ -137,6 +137,7 @@ class App extends React.Component {
 					battleCanStart={ this.state.battleCanStart }
 					updateBattleStarted={ this.updateBattleStarted }
 					loadSampleEncounter={ this.loadSampleEncounter }
+					battleStarted={ this.state.battleStarted }
 				/>
 			</div>
 			</>
