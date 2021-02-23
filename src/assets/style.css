@@ -66,6 +66,9 @@ span.hp-label {
   font-family: "Cinzel Decorative", Georgia, cursive;
   line-height: 2em; }
 
+.hidden {
+  display: none; }
+
 button {
   background: #dcc484;
   font-size: 1rem;
