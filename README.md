@@ -15,7 +15,7 @@ I originally built this as an experiment after finishing [Wes Bos](https://githu
 
 After completing his [CSS Grid](https://cssgrid.io/) course, I decided to revisit this again to add some much-needed styling and layout.
 
-...more stuff here...
+Finally, continuing my JavaScript education, I took his [React for Beginners](https://reactforbeginners.com) course and rebuilt the entire thing in [React](https://reactjs.org/). This time, I refactored some things that were obviously missing, like the ability to retain character info after a battle is done. Finally, I put the whole thing on GitHub pages behind a custom subdomain ([battletracker.jazzsequence.com](https://battletracker.jazzsequence.com)).
 
 ## Roadmap
 These are things I plan (or at least _hope_) to implement in the future.
