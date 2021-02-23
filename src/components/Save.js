@@ -16,6 +16,8 @@ class Save extends React.Component {
 				<SaveButton
 					battleCanStart={ this.props.battleCanStart }
 					updateBattleStarted={ this.props.updateBattleStarted }
+					battleStarted={ this.props.battleStarted }
+					resetEncounter={ this.props.resetEncounter }
 				/>
 				<p className="description" id="save-all-fields-desc">Click the "Let's Go!" button when all characters have been added to start the battle!</p>
 			</div>
