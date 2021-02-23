@@ -19,6 +19,9 @@ Next up is integrating browser storage ~and possibly refactoring as a React app~
 These are things I plan (or at least _hope_) to implement in the future.
 
 * Accessibility
+* Add persistent database
+* Actual SWA
+* Login to use
 * Use browser storage to retain party data after refresh
 * Allow encounters to be reset without losing data
 * Initiative randomizer (define initiative rather than entering rolled values)
