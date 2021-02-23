@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/jazzsequence/DnD-Battle-Tracker.git"
   },
+  "homepage": "https://jazzsequence.github.io/DnD-Battle-Tracker",
   "keywords": [
     "dnd",
     "dungeons",
@@ -23,7 +24,7 @@
     "start": "react-scripts start",
     "dev": "concurrently --prefix name \"npm run start\" \"npm run watch\"",
     "watch": "gulp watch",
-    "build": "npm run build:css && react-scripts build && mv build dist",
+    "build": "npm run build:css && react-scripts build",
     "build:css": "gulp build",
     "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
     "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
@@ -39,6 +40,7 @@
     "run-script-os": "^1.1.5"
   },
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
