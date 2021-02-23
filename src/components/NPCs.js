@@ -18,7 +18,7 @@ class NPCs extends React.Component {
 					npcIndex={ this.props.npcIndex }
 					updateNpcCount={ this.props.updateNpcCount }
 					updateNPCs={ this.props.updateNPCs }
-
+					battleStarted={ this.props.battleStarted }
 				/>
 			</div>
 		)

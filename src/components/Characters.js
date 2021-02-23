@@ -17,6 +17,7 @@ class Characters extends React.Component {
 				characterIndex={ this.props.characterIndex }
 				updateCharacterCount={ this.props.updateCharacterCount }
 				updateCharacters={ this.props.updateCharacters }
+				battleStarted={ this.props.battleStarted }
 			/>
 		</div>
 		)
