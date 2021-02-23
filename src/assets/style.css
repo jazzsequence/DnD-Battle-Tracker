@@ -19,6 +19,10 @@ body {
   background: #2d2c3b;
   color: #f3f2e8;
   font-family: "Palanquin", "Open Sans", sans-serif; }
+  body a.fork-me-on-github {
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 header {
   display: grid;

@@ -2,6 +2,12 @@ body {
 	background: $black;
 	color: $white;
 	font-family: $body;
+
+	a.fork-me-on-github {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }
 
 header {
