@@ -1,5 +1,8 @@
 # OS Files
 .DS_Store
 
+# Ignore built files
+build
+
 # NPM stuff
 node_modules
