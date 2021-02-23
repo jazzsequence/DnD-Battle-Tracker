@@ -18,6 +18,10 @@ class App extends React.Component {
 	componentDidUpdate() {
 		// Handle starting the battle.
 		this.maybeUpdateBattleCanStart();
+
+		localStorage.setItem( this.props.match.params.encounterGuid, JSON.stringify( this.state ) );
+	}
+
 	}
 
 	updateCharacters = ( key, updatedCharacter ) => {
