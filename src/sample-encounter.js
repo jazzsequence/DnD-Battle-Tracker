@@ -1,44 +1,44 @@
-const characters = {
-	frodo: {
+const characters = [
+	{
 		name: "Frodo",
 		dex: 15,
 		hp: 55,
 		init: 15
 	},
-	samwise: {
+	{
 		name: "Samwise",
 		dex: 10,
 		hp: 45,
 		init: 13
 	},
-	merry: {
+	{
 		name: "Merry",
 		dex: 16,
 		hp: 35,
 		init: 15
 	},
-	pippin: {
+	{
 		name: "Pippin",
 		dex: 16,
 		hp: 35,
 		init: 16
 	}
-};
+];
 
-const npcs = {
-	shelob: {
+const npcs = [
+	{
 		name: "Shelob",
 		dex: 14,
 		hp: 85,
 		init: 15
 	},
-	gollum: {
+	{
 		name: "Gollum",
 		dex: 13,
 		hp: 35,
 		init: 14
 	}
-};
+];
 
 const sampleState = {
 	characters,
