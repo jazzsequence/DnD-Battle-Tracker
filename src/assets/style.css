@@ -23,11 +23,19 @@ body {
 header {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center; }
+  justify-items: center;
+  margin-bottom: 2em; }
+  header a {
+    text-decoration: none;
+    color: #f3f2e8;
+    border-bottom: 1px solid transparent; }
+    header a:hover, header a:active {
+      border-bottom: 1px dotted #f3f2e8; }
 
 h1 {
   font-family: "Uncial Antiqua", Georgia, cursive;
-  font-weight: 300; }
+  font-weight: 300;
+  margin-bottom: 0; }
 
 h2 {
   font-family: "Cinzel Decorative", Georgia, cursive; }
@@ -65,6 +73,16 @@ button {
   button:hover:not(:disabled) {
     background: #70ddd7;
     cursor: pointer; }
+
+.battle-tracker-home {
+  margin: 0 auto;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; }
+  .battle-tracker-home form {
+    justify-self: center;
+    align-self: center; }
 
 .battle-tracker {
   margin: 0 auto;

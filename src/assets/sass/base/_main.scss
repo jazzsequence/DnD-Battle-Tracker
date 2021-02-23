@@ -8,6 +8,19 @@ header {
 	display: grid;
 	grid-template-columns: 1fr;
 	justify-items: center;
+	margin-bottom: 2em;
+
+	a {
+		text-decoration: none;
+		color: $white;
+		border-bottom: 1px solid transparent;
+
+		&:hover,
+		&:active {
+			border-bottom: 1px dotted $white;
+		}
+	}
+
 }
 
 h1 {
