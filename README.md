@@ -29,7 +29,13 @@ These are things I plan (or at least _hope_) to implement in the future.
 ## Changelog
 
 ### 0.3.0
-tba
+* refactored entire codebase in React
+* added true build and deploy process so app can be deployed as a single-page app (SPA)
+* updated the character add and initiative order elements so characters are automatically ordered in their initiative order when they are added
+* even more simplified html in the main `index.html` file (everything is served from within React components)
+* added a new landing page which generates a unique guid where all your encounter information is stored in local storage.
+* added a generic 404 page
+* added `gh-pages` to handle deploying to GitHub pages
 
 ### 0.2.0
 * added build tools
