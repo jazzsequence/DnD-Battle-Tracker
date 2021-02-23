@@ -187,13 +187,16 @@ button {
   .battle-tracker #save-fields {
     grid-area: save;
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: 1fr auto;
-    grid-template-areas: "description button"; }
+    grid-template-areas: "description button1 button2"; }
     .battle-tracker #save-fields p {
       grid-area: description;
       margin: 0;
       grid-column-start: 1; }
-    .battle-tracker #save-fields button {
-      grid-area: button;
+    .battle-tracker #save-fields button.load-sample-encounter {
+      grid-area: button1; }
+    .battle-tracker #save-fields button#save-all-fields {
+      grid-area: button2;
       grid-column-start: -1;
       align-self: center; }
