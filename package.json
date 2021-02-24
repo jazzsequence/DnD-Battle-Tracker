@@ -5,7 +5,7 @@
   "bugs": {
     "url": "https://github.com/jazzsequence/DnD-Battle-Tracker/issues"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple battle tracking system for Dungeons & Dragons written in JavaScript to track initiative and damage.",
   "repository": {
     "type": "git",
