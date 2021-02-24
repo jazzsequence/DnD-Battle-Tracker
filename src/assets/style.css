@@ -105,7 +105,7 @@ button {
     .battle-tracker .characters .character-edit,
     .battle-tracker .monsters-npcs .character-edit {
       display: grid;
-      grid-template-columns: 5fr repeat(4, 1fr);
+      grid-template-columns: 1fr repeat(4, auto);
       grid-gap: 10px;
       align-items: start; }
       .battle-tracker .characters .character-edit .hp-input,
@@ -116,7 +116,7 @@ button {
         width: 3rem; }
       .battle-tracker .characters .character-edit .character-dex,
       .battle-tracker .monsters-npcs .character-edit .character-dex {
-        width: auto; }
+        width: 2rem; }
     .battle-tracker .characters button,
     .battle-tracker .monsters-npcs button {
       justify-self: end; }

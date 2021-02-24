@@ -1,0 +1,12 @@
+.battle-tracker-home {
+	margin: 0 auto;
+	max-width: 80%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+
+	form {
+		justify-self: center;
+		align-self: center;
+	}
+}
