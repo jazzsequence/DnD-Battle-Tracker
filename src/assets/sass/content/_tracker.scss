@@ -15,7 +15,7 @@
 
 		.character-edit {
 			display: grid;
-			grid-template-columns: 5fr repeat( 4, 1fr );
+			grid-template-columns: 1fr repeat( 4, auto );
 			grid-gap: 10px;
 			align-items: start;
 
@@ -28,7 +28,7 @@
 			}
 
 			.character-dex {
-				width: auto;
+				width: 2rem;
 			}
 		}
 
