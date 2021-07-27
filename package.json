@@ -32,7 +32,7 @@
     "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.14",
+    "browser-sync": "^2.27.5",
     "concurrently": "^6.0.0",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
