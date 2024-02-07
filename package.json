@@ -38,7 +38,7 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "node-sass": "^6.0.1",
-    "react-scripts": "^4.0.2",
+    "react-scripts": "^5.0.1",
     "run-script-os": "^1.1.6"
   },
   "dependencies": {
